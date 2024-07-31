@@ -1,7 +1,8 @@
+from sys import stdin
 n,t = map(int, stdin.readline().split())
 
 arr = list(map(int, stdin.readline().split()))
-arr2 = list((map(int, stdin.readline().split()))
+arr2 = list((map(int, stdin.readline().split())))
 arr.extend(arr2)
 
 t2 = t%(2*n)
