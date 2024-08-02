@@ -1,7 +1,8 @@
 from sys import stdin, stdout
 n, t = map(int, stdin.readline().split())
-tt = t % (n)
 N = n*3
+tt = t % N
+
 
 arr = list(map(int, stdin.readline().split()))
 arr.extend(map(int, stdin.readline().split()))
