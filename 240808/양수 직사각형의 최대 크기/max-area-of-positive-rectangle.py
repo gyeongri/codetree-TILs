@@ -7,7 +7,7 @@ def check(a,b,c,d):
     #     return False
     for i in range(a,b):
         for j in range(c,d):
-            if arr[i][j]<0:
+            if arr[i][j]<=0:
                 return False
     return True
 
