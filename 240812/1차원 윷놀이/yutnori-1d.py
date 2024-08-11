@@ -36,4 +36,4 @@ def dfs(cnt, arr):
 
 dfs(0,arr)
 
-print(max_score)
+stdout.write(str(max_score))
