@@ -19,7 +19,7 @@ def dfs(y, x):
         if ty>=0 and ty<n and tx>=0 and tx<m and v[ty][tx]==False and arr[ty][tx]==1:
             v[ty][tx] = True
             dfs(ty,tx)
-            v[ty][tx] = False
+            #v[ty][tx] = False
 
 dfs(0,0)
 stdout.write(str(ans))
