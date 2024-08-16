@@ -1,4 +1,6 @@
-from sys import stdin, stdout
+from sys import stdin, stdout, setrecursionlimit
+import sys
+sys.setrecursionlimit(2500)
 
 N, M = map(int, stdin.readline().split())
 town = [list(map(int, stdin.readline().split())) for _ in range(N)]
