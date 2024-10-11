@@ -25,28 +25,23 @@ def explosion(nums, v): # nums 배열을 기반으로 순서대로 폭탄 터뜨
         v[y][x] = True
 
         if nums[num] == 1:
-            if range_check(y-1) and range_check(y-2) and range_check(y+1) and range_check(y+2):
-                v[y-1][x]=True
-                v[y-2][x]=True
-                v[y+1][x]=True
-                v[y+2][x]=True
+            if range_check(y-1): v[y-1][x]=True
+            if range_check(y-2): v[y-2][x]=True
+            if range_check(y+1): v[y+1][x]=True
+            if range_check(y+2): v[y+2][x]=True
 
         elif nums[num] == 2:
-            if range_check(y-1) and range_check(x-1) and range_check(y+1) and range_check(x+1):
-                v[y-1][x]=True
-                v[y][x-1]=True
-                v[y+1][x]=True
-                v[y][x+1]=True      
+            if range_check(y-1): v[y-1][x]=True
+            if range_check(x-1): v[y][x-1]=True
+            if range_check(y+1): v[y+1][x]=True
+            if range_check(x+1): v[y][x+1]=True 
 
         elif nums[num] == 3:
-            if range_check(y-1) and range_check(x-1) and range_check(y+1) and range_check(x+1):
-                v[y-1][x-1]=True
-                v[y-1][x+1]=True
-                v[y+1][x-1]=True
-                v[y+1][x+1]=True
-    a = calc(v)
-    
-    return a
+            if range_check(y-1) and range_check(x-1): v[y-1][x-1]=True
+            if range_check(y-1) and range_check(x+1): v[y-1][x+1]=True
+            if range_check(y+1) and range_check(x-1): v[y+1][x-1]=True
+            if range_check(y+1) and range_check(x+1): v[y+1][x+1]=True         
+    return calc(v)
 
 
 def dfs(level):
