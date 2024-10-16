@@ -4,10 +4,10 @@ public class Main {
     static int n, maxCnt;
     static List<int[]> selectedLines = new ArrayList<>();
     static int[][] lines;
-    static boolean isOverlapped(int[] cur){//겹치는지 확인
-        for(int[] line: selectedLines){
-            if ((cur[0]>= line[0] && cur[0]<=line[1]) || (cur[1]>= line[0] && cur[1]<=line[1])) {
-                return true;
+    static boolean isOverlapped(int[] line2){//겹치는지 확인
+        for(int[] line1: selectedLines){
+           if (!(line1[1] < line2[0] || line2[1] < line1[0])) {
+            return true;
             }
         }
         return false;
@@ -41,6 +41,9 @@ public class Main {
             lines[i][1] = Integer.parseInt(st.nextToken());
        
         }
+        
+        // 오른쪽 끝점 기준으로 선분 정렬 (최대한 겹치지 않게 탐색)
+        Arrays.sort(lines, Comparator.comparingInt(a -> a[1]));
 
         dfs(0);
         sb.append(maxCnt);
