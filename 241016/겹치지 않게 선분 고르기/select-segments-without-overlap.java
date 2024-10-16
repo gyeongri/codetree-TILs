@@ -18,11 +18,11 @@ public class Main {
         int len = selectedLines.size();
         maxCnt = Math.max(maxCnt, len);
 
-        for(int i=len; i<n; ++i){
+        for(int i=depth; i<n; ++i){
             if(isOverlapped(lines[i])) continue;
             selectedLines.add(lines[i]);
-            dfs(depth+1);
-            selectedLines.remove(lines[i]);
+            dfs(i+1);
+            selectedLines.remove(selectedLines.size() - 1);
         }
 
     }
